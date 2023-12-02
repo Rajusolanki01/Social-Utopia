@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import { v4 as uuidv4 } from "uuid";
 import { hashString } from "./CreateJwt.js";
 import Verification from "../models/emailVerification.js";
-import PasswordReset from "../models/PasswordReset.js";
+import PasswordReset from "../models/passwordReset.js"
 
 dotenv.config("./env");
 
