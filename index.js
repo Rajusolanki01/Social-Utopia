@@ -5,7 +5,7 @@ import morgan from "morgan";
 import bodyParser from "body-parser";
 import path from "path";
 
-// *securty packges
+//* securty packges
 import helmet from "helmet";
 import dbConnection from "./dbConfig/dbConnect.js";
 import errorMiddleware from "./middlewares/errorMiddleware.js";
@@ -34,14 +34,14 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(morgan("common"));
 app.use("/auth", authRoute); //* All Api Routes
-app.use("/posts",postRoute); //* All Api Routes
-app.use("/users",userRoute); //* All Api Routes
+app.use("/posts", postRoute); //* All Api Routes
+app.use("/users", userRoute); //* All Api Routes
 
 //* error middleware
 app.use(errorMiddleware);
 
 app.get("/", (req, res) => {
-  res.status(200).send("OK From Server");
+  res.status(200).send("OK From Server...");
 });
 
 app.listen(PORT, () => {
