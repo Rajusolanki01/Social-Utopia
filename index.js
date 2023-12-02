@@ -10,8 +10,8 @@ import helmet from "helmet";
 import dbConnection from "./dbConfig/dbConnect.js";
 import errorMiddleware from "./middlewares/errorMiddleware.js";
 import authRoute from "./routes/authRoutes.js";
-import postRoute from "../server/routes/postRoutes.js";
-import userRoute from "../server/routes/userRoutes.js";
+import postRoute from "./routes/postRoutes.js";
+import userRoute from "./routes/userRoutes.js";
 
 const __dirname = path.resolve(path.dirname(""));
 
