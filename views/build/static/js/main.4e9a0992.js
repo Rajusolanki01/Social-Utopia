@@ -9727,8 +9727,8 @@
                             (e.prev = 8),
                             (e.next = 11),
                             fetch(
-                              "http://localhost:8000/users/reset-password",
-                              // "https://social-utopia.onrender.com/users/reset-password",
+                              // "http://localhost:8000/users/reset-password",
+                              "https://social-utopia.onrender.com/users/reset-password",
                               {
                                 method: "POST",
                                 headers: { "Content-Type": "application/json" },
