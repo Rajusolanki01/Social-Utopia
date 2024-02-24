@@ -44,13 +44,17 @@ export const verifyEmail = async (req, res) => {
                 .then(() => {
                   Verification.findOneAndDelete({ userId }).then(() => {
                     const message = "Email verified successfully";
-                    res.redirect(`/users/verified?status=success&message=${message}`);
+                    res.redirect(
+                      `/users/verified?status=success&message=${message}`
+                    );
                   });
                 })
                 .catch((err) => {
                   console.log(err);
                   const message = "Verification failed or link is invalid";
-                  res.redirect(`/users/verified?status=error&message=${message}`);
+                  res.redirect(
+                    `/users/verified?status=error&message=${message}`
+                  );
                 });
             } else {
               //* If token doesn't match, invalid token
@@ -131,7 +135,9 @@ export const resetPassword = async (req, res) => {
 
     if (!resetPassword) {
       const message = "Invalid password reset link. Try again";
-      return res.redirect(`/users/resetpassword?status=error&message=${message}`);
+      return res.redirect(
+        `/users/resetpassword?status=error&message=${message}`
+      );
     }
 
     const { expiresAt, token: resetToken } = resetPassword;
