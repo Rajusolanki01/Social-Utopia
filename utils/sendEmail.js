@@ -8,7 +8,7 @@ import PasswordReset from "../models/passwordReset.js"
 dotenv.config("./env");
 
 //* Destructure environment variables
-const { AUTH_EMAIL, AUTH_PASSWORD, APP_URLL } = process.env;
+const { AUTH_EMAIL, AUTH_PASSWORD, APP_URL } = process.env;
 
 //* Create a Nodemailer transporter with Outlook SMTP settings
 let transporter = nodemailer.createTransport({
@@ -28,7 +28,7 @@ export const sendVerificationEmail = async (user, res) => {
   const token = _id + uuidv4();
 
   //* Create a verification link
-  const link = APP_URLL + "users/verify/" + _id + "/" + token;
+  const link = APP_URL + "users/verify/" + _id + "/" + token;
 
   //* Mail options for the verification email
   const mailOptions = {

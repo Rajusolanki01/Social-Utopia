@@ -9694,8 +9694,8 @@
         v = u((0, e.useState)(null), 2),
         g = v[0],
         y = v[1],
-        // b = "http://localhost:3000/login",
-        b = "https://socialutopia.netlify.app/",
+        b = "http://localhost:3000/login",
+        // b = "https://socialutopia.netlify.app/",
         w = (function () {
           var e,
             t =
@@ -9727,8 +9727,8 @@
                             (e.prev = 8),
                             (e.next = 11),
                             fetch(
-                              // "http://localhost:8000/users/reset-password",
-                              "https://social-utopia.onrender.com/users/reset-password",
+                              "http://localhost:8000/users/reset-password",
+                              // "https://social-utopia.onrender.com/users/reset-password",
                               {
                                 method: "POST",
                                 headers: { "Content-Type": "application/json" },
