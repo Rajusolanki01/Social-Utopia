@@ -5,8 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": " NODE_OPTIONS='--experimental-specifier-resolution=node' node src/index.js && node index.js"
+    "start":"NODE_ENV=production node ./index.js",
+    "dev": "set NODE_ENV=development && nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
