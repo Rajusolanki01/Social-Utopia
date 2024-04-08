@@ -9694,103 +9694,100 @@
         v = u((0, e.useState)(null), 2),
         g = v[0],
         y = v[1],
-        // b = "http://localhost:3000/login",
-        b = "https://socialutopia-client-58hje.ondigitalocean.app";
-      (w = (function () {
-        var e,
-          t =
-            ((e = l().mark(function e(t) {
-              var n, r;
-              return l().wrap(
-                function (e) {
-                  for (;;)
-                    switch ((e.prev = e.next)) {
-                      case 0:
-                        if (
-                          (t.preventDefault(),
-                          y(null),
-                          (n = t.target[0].value),
-                          (r = t.target[1].value),
-                          n === r)
-                        ) {
-                          e.next = 7;
-                          break;
-                        }
-                        return (
-                          window.alert(
-                            "Passwords do not match. Please try again."
-                          ),
-                          e.abrupt("return")
-                        );
-                      case 7:
-                        return (
-                          (e.prev = 8),
-                          (e.next = 11),
-                          fetch(
-                            "http://localhost:8000/users/reset-password",
-                            // "https://socialutopia-server-ibkyr.ondigitalocean.app/",
-                            "https://socialutopia-server-4qwwm.ondigitalocean.app/users/reset-password",
-                            {
-                              method: "POST",
-                              headers: { "Content-Type": "application/json" },
-                              body: JSON.stringify({
-                                userId: s,
-                                password: n,
+        b = "https://socialutopia-client-58hje.ondigitalocean.app",
+        w = (function () {
+          var e,
+            t =
+              ((e = l().mark(function e(t) {
+                var n, r;
+                return l().wrap(
+                  function (e) {
+                    for (;;)
+                      switch ((e.prev = e.next)) {
+                        case 0:
+                          if (
+                            (t.preventDefault(),
+                            y(null),
+                            (n = t.target[0].value),
+                            (r = t.target[1].value),
+                            n === r)
+                          ) {
+                            e.next = 7;
+                            break;
+                          }
+                          return (
+                            window.alert(
+                              "Passwords do not match. Please try again."
+                            ),
+                            e.abrupt("return")
+                          );
+                        case 7:
+                          return (
+                            (e.prev = 8),
+                            (e.next = 11),
+                            fetch(
+                              "http://localhost:8800/users/reset-password",
+                              {
+                                method: "POST",
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify({
+                                  userId: s,
+                                  password: n,
+                                }),
+                              }
+                            )
+                          );
+                        case 11:
+                          e.sent.ok
+                            ? (window.alert("Password reset successful!"),
+                              window.location.replace(b),
+                              y({
+                                status: "ok",
+                                msg: "Password reset successful!",
+                              }))
+                            : y({
+                                status: "failed",
+                                msg: "Password reset failed. Please try again.",
                               }),
-                            }
-                          )
-                        );
-                      case 11:
-                        e.sent.ok
-                          ? (window.alert("Password reset successful!"),
-                            window.location.replace(b),
+                            (e.next = 19);
+                          break;
+                        case 15:
+                          (e.prev = 15),
+                            (e.t0 = e.catch(8)),
                             y({
-                              status: "ok",
-                              msg: "Password reset successful!",
-                            }))
-                          : y({
                               status: "failed",
-                              msg: "Password reset failed. Please try again.",
+                              msg: "An error occurred. Please try again later.",
                             }),
-                          (e.next = 19);
-                        break;
-                      case 15:
-                        (e.prev = 15),
-                          (e.t0 = e.catch(8)),
-                          y({
-                            status: "failed",
-                            msg: "An error occurred. Please try again later.",
-                          }),
-                          console.log("An error occurred:", e.t0);
-                      case 19:
-                      case "end":
-                        return e.stop();
-                    }
-                },
-                e,
-                null,
-                [[8, 15]]
-              );
-            })),
-            function () {
-              var t = this,
-                n = arguments;
-              return new Promise(function (r, l) {
-                var o = e.apply(t, n);
-                function u(e) {
-                  a(o, r, l, u, i, "next", e);
-                }
-                function i(e) {
-                  a(o, r, l, u, i, "throw", e);
-                }
-                u(void 0);
+                            console.log("An error occurred:", e.t0);
+                        case 19:
+                        case "end":
+                          return e.stop();
+                      }
+                  },
+                  e,
+                  null,
+                  [[8, 15]]
+                );
+              })),
+              function () {
+                var t = this,
+                  n = arguments;
+                return new Promise(function (r, l) {
+                  var o = e.apply(t, n);
+                  function u(e) {
+                    a(o, r, l, u, i, "next", e);
+                  }
+                  function i(e) {
+                    a(o, r, l, u, i, "throw", e);
+                  }
+                  u(void 0);
+                });
               });
-            });
-        return function (e) {
-          return t.apply(this, arguments);
-        };
-      })()),
-        (k = function () {
+          return function (e) {
+            return t.apply(this, arguments);
+          };
+        })(),
+        k = function () {
           return (0, i.jsxs)("div", {
             className: "card",
             children: [
@@ -9812,8 +9809,8 @@
                 }),
             ],
           });
-        }),
-        (S = function () {
+        },
+        S = function () {
           return (0, i.jsxs)("div", {
             class: "card",
             children: [
@@ -9862,7 +9859,7 @@
               }),
             ],
           });
-        });
+        };
       return (
         (0, e.useEffect)(
           function () {
