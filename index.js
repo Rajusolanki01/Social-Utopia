@@ -25,11 +25,11 @@ const PORT = process.env.PORT || 8800;
 
 dbConnection();
 
-let origin = "http://localhost:3000";
+let origin = "https://starfish-app-spjys.ondigitalocean.app/";
 console.log("here env", process.env.NODE_ENV);
 
 if (process.env.NODE_ENV === "production") {
-  origin = process.env.CORS_ORIGIN;
+  origin = process.env.CORS_ORIGIN || origin;
 }
 
 app.use(
