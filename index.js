@@ -28,7 +28,7 @@ dbConnection();
 app.use(
   cors({
     credentials: true,
-    origin: "https://socialutopia-client-h68xt.ondigitalocean.app/",
+    origin: "https://socialutopia-client-h68xt.ondigitalocean.app/#/",
   })
 );
 app.use(helmet());
