@@ -29,7 +29,7 @@ let origin = "https://starfish-app-spjys.ondigitalocean.app/";
 console.log("here env", process.env.NODE_ENV);
 
 if (process.env.NODE_ENV === "production") {
-  origin = process.env.CORS_ORIGIN || origin;
+  origin = "https://starfish-app-spjys.ondigitalocean.app/";
 }
 
 app.use(
