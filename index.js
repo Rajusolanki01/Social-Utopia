@@ -25,16 +25,10 @@ const PORT = process.env.PORT || 8800;
 
 dbConnection();
 
-let prodOrigin = ""; // Define prodOrigin variable
-
-if (process.env.NODE_ENV === "production") {
-  prodOrigin = "https://starfish-app-spjys.ondigitalocean.app"; // Remove trailing slash
-}
-
 app.use(
   cors({
     credentials: true,
-    origin: "https://starfish-app-spjys.ondigitalocean.app", // Use an array of origins
+    origin: "https://socialutopia-client-h68xt.ondigitalocean.app/",
   })
 );
 app.use(helmet());

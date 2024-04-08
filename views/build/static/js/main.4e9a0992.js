@@ -9695,7 +9695,7 @@
         g = v[0],
         y = v[1],
         // b = "http://localhost:3000/login",
-        b = "https://starfish-app-spjys.ondigitalocean.app/";
+        b = "https://socialutopia-server-ibkyr.ondigitalocean.app/";
       // b = "https://socialutopia.netlify.app/",
       (w = (function () {
         var e,
@@ -9729,7 +9729,7 @@
                           (e.next = 11),
                           fetch(
                             // "http://localhost:8000/users/reset-password",
-                            "https://starfish-app-spjys.ondigitalocean.app/",
+                            "https://socialutopia-server-ibkyr.ondigitalocean.app/",
                             // "https://social-utopia.onrender.com/users/reset-password",
                             {
                               method: "POST",
