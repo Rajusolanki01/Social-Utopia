@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import { v4 as uuidv4 } from "uuid";
 import { hashString } from "./CreateJwt.js";
 import Verification from "../models/emailVerification.js";
-import PasswordReset from "../models/passwordReset.js"
+import PasswordReset from "../models/passwordReset.js";
 
 dotenv.config("./env");
 
@@ -14,8 +14,8 @@ const { AUTH_EMAIL, AUTH_PASSWORD, APP_URL } = process.env;
 let transporter = nodemailer.createTransport({
   host: "smtp-mail.outlook.com",
   auth: {
-    user: AUTH_EMAIL,
-    pass: AUTH_PASSWORD,
+    user: "rajusolanki2024@outlook.com",
+    pass: "Raju@878787",
   },
 });
 
@@ -32,7 +32,7 @@ export const sendVerificationEmail = async (user, res) => {
 
   //* Mail options for the verification email
   const mailOptions = {
-    from: AUTH_EMAIL,
+    from: "rajusolanki2024@outlook.com",
     to: email,
     subject: "Email Verification",
     html: `<div style='font-family: Arial, sans-serif; font-size: 20px; color: #333; background-color: #f7f7f7; padding: 20px; border-radius: 5px;'>
@@ -72,7 +72,8 @@ export const sendVerificationEmail = async (user, res) => {
         .then(() => {
           res.status(201).send({
             success: "PENDING",
-            message: "Verification email has been sent to your account. Check your email for further instructions.",
+            message:
+              "Verification email has been sent to your account. Check your email for further instructions.",
           });
         })
         .catch((err) => {
@@ -88,7 +89,7 @@ export const sendVerificationEmail = async (user, res) => {
 
 //* Function to send email for password reset
 export const resetPasswordLink = async (user, res) => {
-//* Destructure user object
+  //* Destructure user object
   const { _id, email } = user;
 
   //* Generate a unique token for password reset
@@ -98,7 +99,7 @@ export const resetPasswordLink = async (user, res) => {
 
   //* Mail options for the password reset email
   const mailOptions = {
-    from: AUTH_EMAIL,
+    from: "rajusolanki2024@outlook.com",
     to: email,
     subject: "Password Reset",
     html: `<p style="font-family: Arial, sans-serif; font-size: 16px; color: #333; background-color: #f7f7f7; padding: 20px; border-radius: 5px;">
