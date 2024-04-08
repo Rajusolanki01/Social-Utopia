@@ -25,13 +25,20 @@ const PORT = process.env.PORT || 8800;
 
 dbConnection();
 
-app.use(helmet());
+let origin = "http://localhost:3000";
+console.log("here env", process.env.NODE_ENV);
+
+if (process.env.NODE_ENV === "production") {
+  origin = process.env.CORS_ORIGIN;
+}
+
 app.use(
   cors({
     credentials: true,
-    origin: "https://social-utopia-server-h3sdn.ondigitalocean.app/",
+    origin,
   })
 );
+app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json({ limit: "10mb" }));
