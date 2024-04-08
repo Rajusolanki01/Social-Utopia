@@ -9695,8 +9695,7 @@
         g = v[0],
         y = v[1],
         // b = "http://localhost:3000/login",
-        b = "https://socialutopia-server-ibkyr.ondigitalocean.app/";
-      // b = "https://socialutopia.netlify.app/",
+        b = "https://socialutopia-client-58hje.ondigitalocean.app";
       (w = (function () {
         var e,
           t =
@@ -9728,9 +9727,9 @@
                           (e.prev = 8),
                           (e.next = 11),
                           fetch(
-                            // "http://localhost:8000/users/reset-password",
-                            "https://socialutopia-server-ibkyr.ondigitalocean.app/",
-                            // "https://social-utopia.onrender.com/users/reset-password",
+                            "http://localhost:8000/users/reset-password",
+                            // "https://socialutopia-server-ibkyr.ondigitalocean.app/",
+                            "https://socialutopia-server-4qwwm.ondigitalocean.app/users/reset-password",
                             {
                               method: "POST",
                               headers: { "Content-Type": "application/json" },
