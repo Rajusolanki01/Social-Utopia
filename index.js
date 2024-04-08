@@ -5,7 +5,7 @@ import morgan from "morgan";
 import bodyParser from "body-parser";
 import path from "path";
 
-//* securty packges
+//* security packages
 import helmet from "helmet";
 import dbConnection from "./dbConfig/dbConnect.js";
 import errorMiddleware from "./middlewares/errorMiddleware.js";
@@ -25,17 +25,16 @@ const PORT = process.env.PORT || 8800;
 
 dbConnection();
 
-let origin = "https://starfish-app-spjys.ondigitalocean.app/";
-console.log("here env", process.env.NODE_ENV);
+let prodOrigin = ""; // Define prodOrigin variable
 
 if (process.env.NODE_ENV === "production") {
-  origin = "https://starfish-app-spjys.ondigitalocean.app/";
+  prodOrigin = "https://starfish-app-spjys.ondigitalocean.app"; // Remove trailing slash
 }
 
 app.use(
   cors({
     credentials: true,
-    origin,
+    origin: "https://starfish-app-spjys.ondigitalocean.app", // Use an array of origins
   })
 );
 app.use(helmet());
@@ -45,9 +44,9 @@ app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 
 app.use(morgan("common"));
-app.use("/auth", authRoute); //* All Api Routes
-app.use("/posts", postRoute); //* All Api Routes
-app.use("/users", userRoute); //* All Api Routes
+app.use("/auth", authRoute); //* All API Routes
+app.use("/posts", postRoute); //* All API Routes
+app.use("/users", userRoute); //* All API Routes
 
 //* error middleware
 app.use(errorMiddleware);
