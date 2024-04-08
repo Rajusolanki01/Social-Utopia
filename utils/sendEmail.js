@@ -12,16 +12,13 @@ const { AUTH_EMAIL, AUTH_PASSWORD, APP_URL } = process.env;
 
 //* Create a Nodemailer transporter with Outlook SMTP settings
 let transporter = nodemailer.createTransport({
-  host: "smtp.office365.com",
-  port: 587,
-  secure: false, // true for 465, false for other ports
+  // service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true, // true for 465, false for other ports
   auth: {
     user: AUTH_EMAIL,
     pass: AUTH_PASSWORD,
-  },
-  tls: {
-    ciphers: "SSLv3",
-    rejectUnauthorized: false,
   },
 });
 
