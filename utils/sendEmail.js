@@ -31,7 +31,7 @@ export const sendVerificationEmail = async (user, res) => {
   const token = _id + uuidv4();
 
   //* Create a verification link
-  const link = `http://localhost:8000/users/verify/${_id}/${token}`;
+  const link = `https://socialutopia-server-4qwwm.ondigitalocean.app/users/verify/${_id}/${token}`;
 
   //* Mail options for the verification email
   const mailOptions = {
@@ -98,7 +98,7 @@ export const resetPasswordLink = async (user, res) => {
   //* Generate a unique token for password reset
   const token = _id + uuidv4();
   //* Create a password reset link
-  const link = `http://localhost:8000/users/reset-password/${_id}/${token}`;
+  const link = `https://socialutopia-server-4qwwm.ondigitalocean.app/users/reset-password/${_id}/${token}`;
 
   //* Mail options for the password reset email
   const mailOptions = {
